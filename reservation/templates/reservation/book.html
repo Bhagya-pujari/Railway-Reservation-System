@@ -1,0 +1,32 @@
+{% extends 'reservation/base.html' %}
+
+{% block content %}
+
+<div class="d-flex justify-content-center">
+    <div class="card shadow p-4 text-center" style="width: 400px;">
+
+        <h3 class="mb-3">Book {{ train.name }}</h3>
+
+        
+        <p class="mb-2"><strong>Departure:</strong> {{ train.departure_time }}</p>
+        <p class="mb-3"><strong>Arrival:</strong> {{ train.arrival_time }}</p>
+        <form method="POST">
+            {% csrf_token %}
+
+            <div class="mb-3 text-start">
+                <label class="form-label">Select Travel Date</label>
+                <input type="date" name="travel_date"
+                       class="form-control"
+                       style="width: 250px; margin: auto;"
+                       required>
+            </div>
+
+            <button type="submit" class="btn btn-success">
+                Confirm Booking
+            </button>
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}

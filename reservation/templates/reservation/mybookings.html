@@ -1,0 +1,24 @@
+{% extends 'reservation/base.html' %}
+{% block content %}
+<center><h3>My Bookings</h3></center>
+
+<center><table class="table table-bordered">
+<tr>
+    <th>Train</th>
+    <th>Date</th>
+    <th>Action</th>
+</tr>
+
+{% for booking in bookings %}
+<tr>
+    <td>{{ booking.train.name }}</td>
+    <td>{{ booking.travel_date }}</td>
+    <td>
+        <a href="{% url 'download' booking.id %}" class="btn btn-info btn-sm">PDF</a>
+        <a href="{% url 'cancel' booking.id %}" class="btn btn-danger btn-sm">🗑️</a>
+    </td>
+</tr>
+{% endfor %}
+
+</table></center>
+{% endblock %}

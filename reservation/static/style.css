@@ -1,0 +1,47 @@
+body {
+    background: #f4f6f9;
+    font-family: Arial, sans-serif;
+}
+
+.title {
+    margin: 20px;
+    color: #2c3e50;
+}
+
+.train-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.train-card {
+    background: white;
+    padding: 20px;
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.train-card:hover {
+    transform: translateY(-5px);
+}
+
+.train-card h3 {
+    color: #007bff;
+}
+
+.book-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 15px;
+    background: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.book-btn:hover {
+    background: #218838;
+}

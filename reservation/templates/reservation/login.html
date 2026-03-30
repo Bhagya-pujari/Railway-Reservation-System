@@ -1,0 +1,28 @@
+{% extends 'reservation/base.html' %}
+
+
+{% block content %}
+
+<div class="card shadow login-box p-4">
+    <h3 class="text-center mb-3">Login</h3>
+
+    <form method="POST">
+        {% csrf_token %}
+        
+        <div class="mb-3">
+            <input type="text" name="username" class="form-control"
+                   placeholder="Enter the user account name" required>
+        </div>
+
+        <div class="mb-3">
+            <input type="password" name="password" class="form-control"
+                   placeholder="Enter the password" required>
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-success w-100">Login</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

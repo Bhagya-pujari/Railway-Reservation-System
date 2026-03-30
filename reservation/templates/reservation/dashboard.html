@@ -1,0 +1,29 @@
+{% extends 'reservation/base.html' %}
+
+{% block content %}
+
+<center><h2 class="mb-4">Available Trains</h2></center>
+
+<div class="row">
+
+    {% for train in trains %}
+    <div class="col-md-6 mb-4">
+        <div class="card shadow p-3 h-100">
+            <h4>{{ train.train_number }} - {{ train.name }}</h4>
+
+            <p><strong>Route:</strong> {{ train.source }} → {{ train.destination }}</p>
+            <p><strong>Departure:</strong> {{ train.departure_time }}</p>
+            <p><strong>Arrival:</strong> {{ train.arrival_time }}</p>
+            <p><strong>Seats Available:</strong> {{ train.seats }}</p>
+            <p><strong>Price:</strong> ₹{{ train.price }}</p>
+
+            <a href="{% url 'book' train.id %}" class="btn btn-success">
+                Book Now
+            </a>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+
+{% endblock %}
